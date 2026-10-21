@@ -4,6 +4,7 @@ import 'package:news_app/utils/AppColors.dart';
 class AppTheme {
   static ThemeData light=ThemeData(
     primaryColor: AppColors.black,
+    focusColor: AppColors.white,
     scaffoldBackgroundColor: AppColors.lightBg,
 
     appBarTheme: AppBarThemeData(
@@ -34,6 +35,7 @@ class AppTheme {
     ),
 
     textTheme: TextTheme(
+      bodyLarge:  TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500,),
       labelLarge: TextStyle(fontSize: 24,fontWeight: FontWeight.w500,color: AppColors.black),
       labelMedium: TextStyle(fontSize: 16,fontWeight: FontWeight.w700,color: AppColors.black),
 
@@ -80,6 +82,7 @@ class AppTheme {
 
   static ThemeData dark=ThemeData(
     primaryColor: AppColors.white,
+    focusColor: AppColors.black,
     fontFamily: "Poppins",
     scaffoldBackgroundColor: AppColors.black,
     cardTheme: CardThemeData(
@@ -118,6 +121,7 @@ class AppTheme {
     ),
 
     textTheme: TextTheme(
+      bodyLarge:  TextStyle(color: Colors.black, fontSize: 28, fontWeight: FontWeight.w500,),
       labelLarge: TextStyle(fontSize: 24,fontWeight: FontWeight.w500,color: AppColors.white),
       labelMedium: TextStyle(fontSize: 16,fontWeight: FontWeight.w700,color: AppColors.white),
 

@@ -22,8 +22,8 @@ class CategoryScreen extends StatelessWidget {
                 separatorBuilder:(_,index)=> SizedBox(height: MediaQuery.of(context).size.height*0.012,),
                 itemBuilder:(_,index)=>
                     InkWell(
-                        onTap: ()=>homeProvider.changeToSources(),
-                        child: CategoryItem(category: CategoryModel.categories[index],)),
+                        onTap: ()=>homeProvider.changeToSources(CategoryModel.categories[index]),
+                        child: CategoryItem(category: CategoryModel.categories[index],index: index,)),
                 itemCount: CategoryModel.categories.length),
           )
         ],
