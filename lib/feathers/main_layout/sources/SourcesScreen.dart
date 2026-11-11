@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/DI/di.dart';
 
 import 'package:news_app/core/state.dart';
 import 'package:news_app/data/api_service/api_Service.dart';
@@ -24,8 +25,8 @@ class _SourcesScreenState extends State<SourcesScreen> {
  late SourcesViewModel sourcesViewModel;
  late ArticlesViewModel articlesViewModel;
  void fetchData()async{
-   sourcesViewModel=SourcesViewModel(repository: SourcesRepositoryImpl(dataSource: SourcesApiDataSource(APIService())));
-   articlesViewModel=ArticlesViewModel(repository: ArticlesRepositoryImpl(dataSource: ArticlesApiDataSource(apiService: APIService())));
+   sourcesViewModel=getIt.get<SourcesViewModel>();
+   articlesViewModel=getIt.get<ArticlesViewModel>();
    await sourcesViewModel.loadSources(widget.category);
    if(sourcesViewModel.state is SuccessState){
 

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 import 'package:news_app/core/result.dart';
 import 'package:news_app/data/api_service/articles_response/Article.dart';
@@ -11,7 +12,7 @@ import 'package:news_app/data/api_service/sources_response/Source.dart';
 import 'package:news_app/data/api_service/sources_response/SourcesResponse.dart';
 import 'package:news_app/feathers/models/CategoryModel.dart';
 
-
+@singleton
 class APIService {
   ///https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
   static const String baseURL = "newsapi.org";

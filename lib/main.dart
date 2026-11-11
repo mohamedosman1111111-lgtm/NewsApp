@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/config/theme/AppTheme.dart';
+import 'package:news_app/core/DI/di.dart';
 import 'package:news_app/provider/HomeProvider.dart';
 import 'package:news_app/provider/ThemeProvider.dart';
 import 'package:news_app/utils/AppRoutes.dart';
 import 'package:provider/provider.dart';
 
 void main()async {
+  configureDependencies();
   WidgetsFlutterBinding.ensureInitialized();
   final themeProvider=AppThemeProvider();
   await themeProvider.initTheme();
