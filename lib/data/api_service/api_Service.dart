@@ -81,4 +81,34 @@ class APIService {
       return Error(message: "An unexpected error occurred: ${exception.toString()}");
     }
   }
+  Future<Result<List<Article>>> searchArticles(String query) async {
+    Uri url = Uri.https(baseURL, articlesEndPoint, {
+      "apiKey": APIKEY,
+      "q": query,
+      "pageSize": "20",
+    });
+    try {
+      http.Response serverResponse = await http.get(url);
+      var json = jsonDecode(serverResponse.body);
+      ArticleResponse articleResponse = ArticleResponse.fromJson(json);
+      if (articleResponse.status == 'error') {
+        return ServerError(
+          code: articleResponse.code ?? '',
+          message: articleResponse.message ?? '',
+        );
+      }
+      return Success(data: articleResponse.articles ?? []);
+    } catch (exception) {
+      if (exception is SocketException) {
+        return Error(message: "No Internet connection. Please check your network.");
+      }
+      if (exception is TimeoutException) {
+        return Error(message: "The connection timed out. Please try again.");
+      }
+      if (exception is FormatException) {
+        return Error(message: "Bad response format from server.");
+      }
+      return Error(message: "An unexpected error occurred: ${exception.toString()}");
+    }
+  }
 }

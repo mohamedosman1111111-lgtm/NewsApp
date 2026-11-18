@@ -4,4 +4,5 @@ import 'package:news_app/data/api_service/sources_response/Source.dart';
 
 abstract class ArticlesDataSource {
   Future<Result<List<Article>>> getArticles(Source source);
+  Future<Result<List<Article>>> searchArticles(String query);
 }

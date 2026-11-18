@@ -14,4 +14,10 @@ class ArticlesApiDataSource implements ArticlesDataSource{
    return result;
   }
 
+  @override
+  Future<Result<List<Article>>> searchArticles(String query) {
+    return apiService.searchArticles(query);
+  }
+
+
 }

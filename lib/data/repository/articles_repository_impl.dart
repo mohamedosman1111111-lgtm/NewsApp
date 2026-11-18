@@ -14,5 +14,8 @@ class ArticlesRepositoryImpl implements ArticlesRepository{
     var result=dataSource.getArticles(source);
     return result;
   }
-
+  @override
+  Future<Result<List<Article>>> searchArticles(String query) {
+    return dataSource.searchArticles(query);
+  }
 }

@@ -38,6 +38,7 @@ class AppTheme {
       bodyLarge:  TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500,),
       labelLarge: TextStyle(fontSize: 24,fontWeight: FontWeight.w500,color: AppColors.black),
       labelMedium: TextStyle(fontSize: 16,fontWeight: FontWeight.w700,color: AppColors.black),
+      labelSmall: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: AppColors.white),
 
 
     ),
@@ -67,7 +68,7 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryBlue,
+          backgroundColor: AppColors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
@@ -124,6 +125,7 @@ class AppTheme {
       bodyLarge:  TextStyle(color: Colors.black, fontSize: 28, fontWeight: FontWeight.w500,),
       labelLarge: TextStyle(fontSize: 24,fontWeight: FontWeight.w500,color: AppColors.white),
       labelMedium: TextStyle(fontSize: 16,fontWeight: FontWeight.w700,color: AppColors.white),
+      labelSmall: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: AppColors.black),
 
 
 
@@ -150,7 +152,7 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.mainTextdark,
+          backgroundColor: AppColors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),

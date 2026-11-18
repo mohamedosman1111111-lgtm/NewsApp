@@ -23,6 +23,7 @@ import '../../data/repository/articles_repository_impl.dart' as _i914;
 import '../../data/repository/sources_repository.dart' as _i773;
 import '../../data/repository/sources_repository_impl.dart' as _i340;
 import '../../feathers/main_layout/sources/article_viewModel.dart' as _i367;
+import '../../feathers/main_layout/sources/search_viewModel.dart' as _i1046;
 import '../../feathers/main_layout/sources/sources_viewModel.dart' as _i583;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -51,6 +52,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.singleton<_i367.ArticlesViewModel>(
       () => _i367.ArticlesViewModel(repository: gh<_i25.ArticlesRepository>()),
+    );
+    gh.singleton<_i1046.SearchViewModel>(
+      () => _i1046.SearchViewModel(repository: gh<_i25.ArticlesRepository>()),
     );
     gh.singleton<_i583.SourcesViewModel>(
       () => _i583.SourcesViewModel(repository: gh<_i773.SourcesRepository>()),

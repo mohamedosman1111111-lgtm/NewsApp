@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/feathers/main_layout/drawer/CustomDrawer.dart';
+import 'package:news_app/feathers/main_layout/sources/SearchScreen.dart';
 import 'package:news_app/provider/HomeProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,11 @@ class MainLayout extends StatelessWidget {
       appBar: AppBar(
         title: Text(homeProvider.appBarTitle),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.search))
+          IconButton(onPressed: (){
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const SearchScreen()),
+          );}, icon: Icon(Icons.search))
         ],
       ),
       drawer: CustomDrawer(),
